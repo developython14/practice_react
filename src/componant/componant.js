@@ -3,8 +3,16 @@ import { Media } from 'reactstrap';
 
 
 class Welcome extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {'name':'mustapha'}
+      }
+
+
     render() {
-      return <h1>Hello, cv khuay {this.props.name}</h1>;
+      return <div>
+        <h3>this.state.name</h3>
+      </div>
     }
   }
 
