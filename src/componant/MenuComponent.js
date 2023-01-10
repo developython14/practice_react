@@ -50,10 +50,8 @@ render_dish(dish){
         return (<div></div>)
     }
     else{
-        return (<Card
-            style={{
-              width: '18rem'
-            }}
+        return (<Card className='col-12 col-md-5'
+       
           >
             <img
               alt="Sample"
