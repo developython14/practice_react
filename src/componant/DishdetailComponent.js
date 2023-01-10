@@ -8,15 +8,26 @@ class DishdetailComponent  extends Component {
     }
 
     render(){
-        const comments = this.props.dish.comments.map((comment) => {
-            return (<p>comment.comment</p>);
-        });
-        return (
-            <div className='d-flex flex-column col-12 col-md-5'>
-                <h3>Comments</h3>
-                {comments}
-            </div>
-        )
+        if (this.props.dish == null){
+            return (<div></div>);
+        }
+        else{
+            console.log(this.props.dish.comments);
+            const Comments = this.props.dish.comments.map((comm)=>{
+                return(<div className='d-flex flex-column'>
+                <p>{comm.comment}</p>
+                <p>{comm.author}</p>
+                </div>
+                )
+            })
+            return (
+                <div className='d-flex flex-column col-12 col-md-5'>
+                    <h3>Comments</h3>
+                    {Comments}
+                </div>
+            )
+        }
+
     }
 
 

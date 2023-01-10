@@ -65,7 +65,7 @@ render(){
               {menu}
               
               {this.render_dish(this.state.selected_dish)}
-              <DishdetailComponent dish = {this.state.selected_dish} />
+              <DishdetailComponent name='lis' dish = {this.state.selected_dish} />
       </div>
     );
 }
