@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Media  , Button} from 'reactstrap';
+import { Media  , Button , Card , CardImg} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -51,6 +51,19 @@ render(){
             <div className='d-flex flex-column ms-3'>
             <h3>{dish.name}</h3>
             <p>{dish.description}</p>
+            <CardImg
+                alt="Card image cap"
+                src="https://picsum.photos/900/270?grayscale"
+                style={{
+                    height: 270
+                }}
+                width="100%"/>
+            <Card className='col-6'>
+            <h3>{dish.name}</h3>
+            <img
+            alt="Sample"
+            src="https://picsum.photos/300/200"/>
+            </Card>
             </div>
           
           </div>
