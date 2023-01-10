@@ -46,7 +46,7 @@ constructor(props){
 render(){
     const menu = this.state.dishes.map((dish) => {
         return (
-            <Card inverse className='col-12 col-sm-5'>
+            <Card inverse className='col-12 col-md-5'>
               <CardImg
                 alt="Card image cap"
                 src={dish.image}
@@ -55,7 +55,7 @@ render(){
                 }}
               />
               <CardImgOverlay>
-                <CardTitle tag="h5" className='dark'>
+                <CardTitle tag="h4" style={{color:'black'}}>
                   {dish.name}
                 </CardTitle>
               </CardImgOverlay>
