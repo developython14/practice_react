@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Media  , Button , Card , CardImg} from 'reactstrap';
+import { Media  , Button , Card , CardImg ,CardImgOverlay,CardText ,CardTitle } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -46,37 +46,26 @@ constructor(props){
 render(){
     const menu = this.state.dishes.map((dish) => {
         return (
-          <div key={dish.id} className="col-12 mt-5 d-flex flex-row align-items-center">
-            <img src={dish.image} alt={dish.name} />
-            <div className='d-flex flex-column ms-3'>
-            <h3>{dish.name}</h3>
-            <p>{dish.description}</p>
-            <CardImg
+            <Card inverse className='col-12 col-sm-5'>
+              <CardImg
                 alt="Card image cap"
-                src="https://picsum.photos/900/270?grayscale"
+                src={dish.image}
                 style={{
-                    height: 270
+                  height: 270
                 }}
-                width="100%"/>
-            <Card className='col-6'>
-            <h3>{dish.name}</h3>
-            <img
-            alt="Sample"
-            src="https://picsum.photos/300/200"/>
+              />
+              <CardImgOverlay>
+                <CardTitle tag="h5" className='dark'>
+                  {dish.name}
+                </CardTitle>
+              </CardImgOverlay>
             </Card>
-            </div>
-          
-          </div>
         );
     });
 
     return (
-      <div className="container">
-        <div className="row">
-          <Media list>
+      <div className="container d-flex flex-row gap-3 flex-wrap">
               {menu}
-          </Media>
-        </div>
       </div>
     );
 }
