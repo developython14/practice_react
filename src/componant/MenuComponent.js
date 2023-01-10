@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Media  , Button , Card , CardImg ,CardImgOverlay,CardText ,CardTitle } from 'reactstrap';
+import { Media  , Button , Card ,CardBody, CardImg ,CardImgOverlay,CardText ,CardTitle } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -41,12 +41,43 @@ constructor(props){
               price:'2.99',
               description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'                        }
            ],
+           selected_dish:null
     };
+}
+
+render_dish(dish){
+    if (dish ==null){
+        return (<div></div>)
+    }
+    else{
+        return (<Card
+            style={{
+              width: '18rem'
+            }}
+          >
+            <img
+              alt="Sample"
+              src={dish.image}
+            />
+            <CardBody>
+              <CardTitle tag="h5">
+               {dish.name}
+              </CardTitle>
+              <CardText>
+                {dish.description}
+              </CardText>
+            </CardBody>
+          </Card>)
+    }
+}
+selected_dish(dish){
+    this.setState({selected_dish:dish})
+
 }
 render(){
     const menu = this.state.dishes.map((dish) => {
         return (
-            <Card inverse className='col-12 col-md-5'>
+            <Card inverse className='col-12 col-md-5' onClick={()=>{this.selected_dish(dish)}}>
               <CardImg
                 alt="Card image cap"
                 src={dish.image}
@@ -66,6 +97,8 @@ render(){
     return (
       <div className="container d-flex flex-row gap-3 flex-wrap">
               {menu}
+              
+              {this.render_dish(this.state.selected_dish)}
       </div>
     );
 }

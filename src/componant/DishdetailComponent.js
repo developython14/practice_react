@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Media  , Button} from 'reactstrap';
-
+import { Media  , Button ,Card ,CardBody, CardImg ,CardImgOverlay,CardText ,CardTitle } from 'reactstrap';
 
 class DishdetailComponent  extends Component {
     constructor(props){
