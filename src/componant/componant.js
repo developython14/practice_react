@@ -4,10 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Welcome extends Component {
     constructor(props) {
+        console.log("called from constructor")
         super(props);
         this.state = {'name':'mustapha' , 'color' :'green'}
         this.handleClick = this.handleClick.bind(this);
         this.handlecolor = this.changecolor.bind(this);
+      }
+
+      static getDerivedStateFromProps(){
+        console.log("called from getDerivedStateFromProps part")
+
+      }
+
+      componentDidMount(){
+        console.log("called from componentDidMount part")
       }
       
 
@@ -23,6 +33,7 @@ class Welcome extends Component {
       }
     
     render() {
+        console.log("called from redering part")
       return <div>
         <h3 style={{color:this.state.color}}>{this.state.name}</h3>
         <Button onClick={this.handleClick}>update</Button>
