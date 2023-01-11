@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Media  , Button , Card ,CardBody, CardImg ,CardImgOverlay,CardText ,CardTitle } from 'reactstrap';
+import {Card ,CardBody, CardImg ,CardImgOverlay,CardText ,CardTitle } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DISHES } from './dishes';
 import DishdetailComponent from './DishdetailComponent';
@@ -43,7 +43,7 @@ selected_dish(dish){
 render(){
     const menu = this.state.dishes.map((dish) => {
         return (
-            <Card inverse className='col-12 col-md-5' onClick={()=>{this.selected_dish(dish)}}>
+            <Card key={dish.id} inverse className='col-12 col-md-5' onClick={()=>{this.selected_dish(dish)}}>
               <CardImg
                 alt="Card image cap"
                 src={dish.image}
@@ -65,7 +65,7 @@ render(){
               {menu}
               
               {this.render_dish(this.state.selected_dish)}
-              <DishdetailComponent name='lis' dish = {this.state.selected_dish} />
+              <DishdetailComponent dish = {this.state.selected_dish} />
       </div>
     );
 }
