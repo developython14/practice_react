@@ -6,8 +6,8 @@ function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <div className='d-flex flex-row'>
-                <img src={leader.image} />
+            <div className='d-flex flex-row gap-3'>
+                <img src={leader.image} height = {'80px'} />
                 <div className='d-flex flex-column'>
                 <h5> {leader.name}</h5>
                 <p> {leader.designation} </p>
