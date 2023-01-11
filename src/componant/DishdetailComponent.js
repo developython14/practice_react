@@ -16,7 +16,7 @@ class DishdetailComponent  extends Component {
             const Comments = this.props.dish.comments.map((comm)=>{
                 return(<div className='d-flex flex-column'>
                 <p>{comm.comment}</p>
-                <p>{comm.author}, {comm.date}</p>
+                <p>--{comm.author}, {comm.date}</p>
                 </div>
                 )
             })
