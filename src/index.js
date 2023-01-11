@@ -8,6 +8,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import About from './componant/AboutComponent';
+import { LEADERS } from './componant/leaders';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/app",
     element: <App/>,
+  },
+  {
+    path: "/about",
+    element: <About leaders={LEADERS}/>,
   },
 
 ]);
