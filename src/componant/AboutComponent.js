@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
+import Header from './header';
 function About(props) {
 
     const leaders = props.leaders.map((leader) => {
@@ -21,6 +21,7 @@ function About(props) {
 
     return(
         <div className="container">
+            <Header/>
             <div className="row">
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>

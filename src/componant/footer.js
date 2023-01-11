@@ -1,4 +1,7 @@
 import React from 'react';
+import 'font-awesome/css/font-awesome.css';
+import 'bootstrap-social/bootstrap-social.css';
+import {Link } from "react-router-dom";
 
 function Footer(props) {
     return(
@@ -9,7 +12,7 @@ function Footer(props) {
                     <h5>Links</h5>
                     <ul className="list-unstyled">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><Link to={'/about'}>About</Link> </li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="contactus.html">Contact</a></li>
                     </ul>
