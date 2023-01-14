@@ -5,14 +5,14 @@ import {Link } from "react-router-dom";
 
 function Footer(props) {
     return(
-    <div className="footer">
+    <div className="footer mt-4">
         <div className="container">
             <div className="row justify-content-center">             
                 <div className="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul className="list-unstyled">
                         <li><a href="#">Home</a></li>
-                        <li><Link to={'/about'}>About</Link> </li>
+                        <li><Link to={'/aboutus'}>About</Link> </li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="contactus.html">Contact</a></li>
                     </ul>

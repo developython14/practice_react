@@ -11,11 +11,7 @@ import {
 import About from './componant/AboutComponent';
 import { LEADERS } from './componant/leaders';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-  },  
+const router = createBrowserRouter([ 
   {
     path: "/home",
     element: <App/>,

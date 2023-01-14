@@ -6,16 +6,7 @@ function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <div className='d-flex flex-row gap-3'>
-                <img src={leader.image} height = {'80px'} />
-                <div className='d-flex flex-column'>
-                <h5> {leader.name}</h5>
-                <p> {leader.designation} </p>
-                <p> {leader.description} </p>
-                </div>
-                
-            </div>
-            
+            <RenderLeader key={leader.id}  lead={leader}/>
         );
     });
 
@@ -82,6 +73,21 @@ function About(props) {
             </div>
         </div>
     );
+}
+
+function RenderLeader(props){
+    return (
+        <div className='d-flex flex-row gap-3 m-5' >
+            <img src={props.lead.image} height = {'80px'} />
+            <div className='d-flex flex-column'>
+            <h5> {props.lead.name}</h5>
+            <p> {props.lead.designation} </p>
+            <p> {props.lead.description} </p>
+            </div>
+        </div>
+        
+    );
+
 }
 
 export default About;    
