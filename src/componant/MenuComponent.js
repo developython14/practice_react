@@ -3,13 +3,8 @@ import {Card ,CardBody, CardImg ,CardImgOverlay,CardText ,CardTitle } from 'reac
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DISHES } from './dishes';
 import DishdetailComponent from './DishdetailComponent';
-import { connect } from 'react-redux';
 
-const mapStateToProps = state =>{
-  return {
-    dishes:state.dishes
-  }
-}
+
 
 class Menu extends Component {
 constructor(props){
@@ -80,6 +75,3 @@ render(){
 
 
 }
-
-
-export default connect(mapStateToProps)(Menu);
