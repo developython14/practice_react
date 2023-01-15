@@ -65,12 +65,11 @@ class CommentForm  extends Component {
     }
 
     validate(){
-        print('function was called')
         const errors = {firstname:''}
-        if (this.state.firstname<3){
+        if (this.state.firstname.length<3){
             errors.firstname = 'name must be greacther to 3'
         }
-        else if (this.state.firstname>8){
+         if (this.state.firstname.length >8){
             errors.firstname = 'NAME mustapha be less than 8'
 
         }
@@ -86,12 +85,18 @@ class CommentForm  extends Component {
               
         render() {
             const errors = this.validate(this.firstname);
+            console.log('hao errors')
+            console.log(errors)
             return(
                 <Form method='Post' onSubmit={this.handleSubmit}>
-                    <Input type='text' value={this.state.firstname} onChange={this.handleInputChange} />
+                    <FormGroup row>
+                    
+                    <Input type='text' value={this.state.firstname} onChange={this.handleInputChange}  valid={errors.firstname.length===0} invalid={errors.firstname.length!=0}/>
                     <FormFeedback >
-                    {errors.firstname}
+                        fdasfdas
+                        {errors.firstname}
                     </FormFeedback>
+                    </FormGroup>
                 </Form>
 
             );
