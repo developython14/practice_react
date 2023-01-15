@@ -3,8 +3,7 @@ import {Card ,CardBody, CardImg ,CardImgOverlay,CardText ,CardTitle } from 'reac
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DISHES } from './dishes';
 import DishdetailComponent from './DishdetailComponent';
-import { Connect } from 'react-redux';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 const mapStateToProps = state =>{
   return {
@@ -83,4 +82,4 @@ render(){
 }
 
 
-export default withRouter(connect(mapStateToProps)(Menu));
+export default connect(mapStateToProps)(Menu);
