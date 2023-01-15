@@ -10,8 +10,10 @@ import {
 
 import About from './componant/AboutComponent';
 import { LEADERS } from './componant/leaders';
-import { configueStore } from './componant/redux/configueStore';
+import { store } from './componant/redux/configueStore';
 import { Provider } from 'react-redux'
+import { Counter } from './componant/counter';
+
 
 const router = createBrowserRouter([ 
   {
@@ -22,15 +24,18 @@ const router = createBrowserRouter([
     path: "/aboutus",
     element: <About leaders={LEADERS}/>,
   },
+  {
+    path: "/redux",
+    element: <Counter/>,
+  },
 
 ]);
 
-const store = configueStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store ={store}>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );

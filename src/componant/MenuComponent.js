@@ -4,8 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { DISHES } from './dishes';
 import DishdetailComponent from './DishdetailComponent';
 
-
-
 class Menu extends Component {
 constructor(props){
     super(props);
@@ -75,3 +73,6 @@ render(){
 
 
 }
+
+
+export default Menu;
