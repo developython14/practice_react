@@ -3,6 +3,14 @@ import {Card ,CardBody, CardImg ,CardImgOverlay,CardText ,CardTitle } from 'reac
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DISHES } from './dishes';
 import DishdetailComponent from './DishdetailComponent';
+import { Connect } from 'react-redux';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+
+const mapStateToProps = state =>{
+  return {
+    dishes:state.dishes
+  }
+}
 
 class Menu extends Component {
 constructor(props){
@@ -75,4 +83,4 @@ render(){
 }
 
 
-export default Menu;
+export default withRouter(connect(mapStateToProps)(Menu));

@@ -10,6 +10,8 @@ import {
 
 import About from './componant/AboutComponent';
 import { LEADERS } from './componant/leaders';
+import { configueStore } from './componant/redux/configueStore';
+import { Provider } from 'react-redux'
 
 const router = createBrowserRouter([ 
   {
@@ -22,10 +24,14 @@ const router = createBrowserRouter([
   },
 
 ]);
+
+const store = configueStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store ={store}>
     <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
